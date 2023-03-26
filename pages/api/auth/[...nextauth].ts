@@ -34,13 +34,13 @@ export default NextAuth({
           },
         });
 
-        if (!user || !user.password) {
+        if (!user || !user.hashedPassword) {
           throw new Error("Invalid email");
         }
 
         const isCorrectPassword = await compare(
           credentials.password,
-          user.password
+          user.hashedPassword
         );
 
         if (!isCorrectPassword) {

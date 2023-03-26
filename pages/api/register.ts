@@ -6,16 +6,16 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
-  }
-
   try {
+    if (req.method !== "POST") {
+      return res.status(405).end();
+    }
+
     const { email, password, name } = req.body;
 
     const existingUser = await prismadb.user.findUnique({
       where: {
-        email: email,
+        email,
       },
     });
 
@@ -27,9 +27,9 @@ export default async function handler(
 
     const user = await prismadb.user.create({
       data: {
-        email: email,
-        password: hashedPassword,
-        name: name,
+        email,
+        hashedPassword,
+        name,
         image: "",
         emailVerified: new Date(),
       },
