@@ -8,8 +8,6 @@ const nextConfig = {
       "uhdtv.io",
       "download.blender.org",
     ],
-    disableStaticImages: true,
-    disableServerlessImages: true,
   },
 };
 
