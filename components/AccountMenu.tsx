@@ -19,6 +19,7 @@ const AccountMenu: React.FC<AccountMenuProps> = ({ visible }) => {
       <div className="flex flex-col gap-3">
         <div className="px-3 group/item flex flex-row gap-3 items-center w-full">
           <Image
+            quality={100}
             src="/images/default-red.png"
             alt="Profiles"
             width={176}

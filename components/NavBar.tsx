@@ -43,7 +43,13 @@ const NavBar = () => {
           showBackground ? " bg-zinc-900/90" : ""
         }`}
       >
-        <Image src="/images/logo.png" alt="logo" height={28} width={100} />
+        <Image
+          quality={100}
+          src="/images/logo.png"
+          alt="logo"
+          height={28}
+          width={100}
+        />
         <div className="flex-row ml-8 gap-7 hidden lg:flex">
           <NavbarItem label="Home" />
           <NavbarItem label="Series" />
@@ -77,6 +83,7 @@ const NavBar = () => {
           >
             <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
               <Image
+                quality={100}
                 src="/images/default-red.png"
                 alt="Profile"
                 width={40}
